@@ -231,3 +231,15 @@ data/
 Milestones.md
 
 .ipynb_checkpoints/
+
+checkpoints/
+*.pth
+
+mmdetection3d/
+
+markdowns/
+mtls/
+results/*/
+!results/plots/
+vast/
+work_dirs/

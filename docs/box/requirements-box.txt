@@ -1,0 +1,30 @@
+# requirements-box.txt
+# ---------------------------------------------------------------------------
+# ONLY the plain, pip-installable dependencies for the mmdet3d detection stack.
+#
+# This file does NOT include torch, torchvision, mmcv, mmdet, or mmdet3d.
+# Those are installed by other means in setup_vastai.sh:
+#   - torch/torchvision : come from the CUDA Vast.ai image (do NOT pip install
+#                         the CPU wheels these pins would otherwise pull)
+#   - mmcv, mmdet       : installed via `mim` so the CUDA/torch-matched build
+#                         is selected
+#   - mmdet3d           : git clone + checkout pinned commit + install
+#
+# Versions below are copied from the working local venv_mmdet3d freeze.
+# numpy is pinned FIRST and separately in the script (ABI-critical), but is
+# repeated here for completeness / re-pinning safety.
+# ---------------------------------------------------------------------------
+
+numpy==1.26.4
+numba==0.66.0
+scipy==1.15.3
+pandas==2.3.3
+
+nuscenes-devkit==1.1.11
+plyfile==1.0.3
+opencv-python-headless==4.10.0.84
+pycocotools==2.0.11
+pyquaternion==0.9.9
+shapely==1.8.5.post1
+scikit-image==0.25.2
+scikit-learn==1.7.2
