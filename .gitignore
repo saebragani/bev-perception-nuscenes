@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -224,22 +223,36 @@ __marimo__/
 
 
 # Project-specific
+# ---- environments / tooling
 venv*/
 .vscode/
-
-data/
-Milestones.md
-
 .ipynb_checkpoints/
 
+# ---- large or non-redistributable data (nuScenes is CC BY-NC-SA; checkpoints are OpenMMLab's)
+data/
 checkpoints/
 *.pth
-
+*.pkl
 mmdetection3d/
+work_dirs/
+results_nusc.json
 
+# ---- results/: raw mmdet3d runs (trainval/, mini/) and derived CSVs (eval/) are large and untracked; only curated plots + metrics_master.csv are
+results/*
+!results/plots/
+!results/metrics_master.csv
+results/plots/3d/gif/frames/
+
+# ---- reference papers (linked from README, not redistributed)
+papers/
+
+# ---- notebooks: only the consolidated analysis notebook is tracked
+notebooks/*
+!notebooks/analysis.ipynb
+
+# ---- scratch
 markdowns/
 mtls/
-results/*/
-!results/plots/
 vast/
-work_dirs/
+Milestones.md
+CLAUDE.md

@@ -1,0 +1,25 @@
+# requirements-inference.txt — plain pip dependencies for the mmdetection3d inference stack.
+# Python 3.10.  Pins copied from the working venv_mmdet3d freeze.
+#
+# NOT included here (installed by other means; see docs/SETUP.md and docs/vastai/setup_vastai.sh):
+#   torch==2.4.1 / torchvision==0.19.1   CUDA build from the Vast.ai image (cu121); CPU wheels locally
+#   mmcv==2.1.0                           built from source (no torch-2.4 wheel); mmdet3d 1.4.0 asserts mmcv<2.2.0
+#   mmdet==3.2.0                          via `mim`; mmdet3d 1.4.0 asserts mmdet<3.3.0
+#   mmengine==0.10.7                      via `mim`
+#   mmdet3d==1.4.0                        git clone open-mmlab/mmdetection3d @ fe25f7a51d36e3702f961e198894580d83c4387b,
+#                                         `pip install . --no-build-isolation` (editable install fails, PEP 660)
+#
+# numpy must stay <2: the mmcv/numba ABI breaks on numpy 2. Re-pin after every install step.
+numpy==1.26.4
+numba==0.66.0
+scipy==1.15.3
+pandas==2.3.3
+
+nuscenes-devkit==1.1.11
+pyquaternion==0.9.9
+Shapely==1.8.5.post1
+plyfile==1.0.3            # <1.1 (plyfile>=1.1 requires numpy>=2)
+opencv-python-headless==4.10.0.84   # <4.11, headless only (full opencv forces numpy>=2)
+scikit-image==0.25.2
+trimesh==4.12.2
+openmim==0.3.9

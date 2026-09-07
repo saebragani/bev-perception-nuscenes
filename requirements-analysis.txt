@@ -1,0 +1,18 @@
+# requirements-analysis.txt — CPU-only analysis / plotting environment (venv_nuscene, Python 3.12.4).
+# Everything in notebooks/analysis.ipynb and scripts/evaluation/ runs here; no torch, no CUDA.
+#   python -m venv venv_nuscene && source venv_nuscene/bin/activate
+#   pip install -r requirements-analysis.txt && pip install -e .    # -e . exposes scripts.evaluation
+nuscenes-devkit==1.2.0
+numpy==1.26.4
+pandas==3.0.3
+scipy==1.17.1
+matplotlib==3.11.0
+seaborn==0.13.2
+plotly==6.8.0
+pyquaternion==0.9.9
+shapely==2.0.7
+pillow==12.2.0
+tqdm==4.68.3
+tabulate==0.10.0        # DataFrame.to_markdown
+jupyterlab==4.6.0
+ipykernel==7.3.0
